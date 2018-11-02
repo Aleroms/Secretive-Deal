@@ -26,7 +26,7 @@ public class Pickups : MonoBehaviour {
         if(collision.tag == "Untagged"){
 
             pickup.Pickups++;
-            Debug.Log("Pickup Attained");
+            Debug.Log("Current Pickups: " + pickup.Pickups);
         }
     }
 }

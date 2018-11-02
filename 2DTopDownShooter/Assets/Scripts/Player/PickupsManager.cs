@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupsManager : MonoBehaviour {
 
-    private int pickups;
+    public int pickups;
     public int Pickups{
         get;
         set;

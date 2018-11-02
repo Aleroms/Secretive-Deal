@@ -21,6 +21,7 @@ public class TimeBomb : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(BombActivated());
+        Debug.Log("BOOM");
     }
 
     IEnumerator BombActivated()
