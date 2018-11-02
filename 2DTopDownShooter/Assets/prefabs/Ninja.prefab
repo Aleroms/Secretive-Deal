@@ -54,6 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4106325426260672}
   - component: {fileID: 114085351942128988}
+  - component: {fileID: 58063638758822306}
+  - component: {fileID: 114707709016363374}
+  - component: {fileID: 114976494279888522}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Player
@@ -102,6 +105,21 @@ Transform:
   m_Father: {fileID: 4106325426260672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58063638758822306
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896441823218850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!114 &114085351942128988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +160,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseAngle: 0
   rotationSpeed: 5
+--- !u!114 &114707709016363374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896441823218850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfad8da6386b94e0ea82395a2d965336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114715805820910262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +184,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingDistance: 300
   firingPoint: {fileID: 4228753054097604}
+--- !u!114 &114976494279888522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896441823218850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ad3250f3a8641f783c38fa116623d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212045802575749480
 SpriteRenderer:
   m_ObjectHideFlags: 1
