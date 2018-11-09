@@ -5,8 +5,6 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
     public Transform Player;
     int MoveSpeed = 4;
-    int MaxDist = 10;
-    int MinDist = 5;
     // Use this for initialization
     void Start () {
         Player = GameObject.Find("Player").transform;
@@ -20,3 +18,4 @@ public class FollowPlayer : MonoBehaviour {
         transform.position -= MoveSpeed * Time.deltaTime * transform.right;
     }
 }
+

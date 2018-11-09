@@ -10,11 +10,10 @@ public class playerMovement : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		//player moves up or down
 		if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
 		{
@@ -27,5 +26,6 @@ public class playerMovement : MonoBehaviour {
 			playerX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
 			transform.Translate(new Vector3(playerX, 0.0f, 0.0f));
 		}
-	}
+        //transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
 }

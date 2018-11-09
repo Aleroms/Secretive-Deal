@@ -27,4 +27,9 @@ public class enemyBehavior : MonoBehaviour {
 		//kill this object
 		Destroy(gameObject);
 	}
+
+    public void reduceHealth(int damage)
+    {
+        currentHealth -= damage;
+    }
 }
