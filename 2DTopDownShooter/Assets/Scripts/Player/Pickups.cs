@@ -27,6 +27,11 @@ public class Pickups : MonoBehaviour {
 
             pickup.Pickups++;
             Debug.Log("Current Pickups: " + pickup.Pickups);
+        } else if(collision.tag == "Ammo"){
+
+            gameObject.transform.Find("NinjaSprite").transform.Find("ShootingOrigin").GetComponent<weaponInfo>().addAmmo(10);
+            Destroy(collision.gameObject);
+
         }
     }
 }

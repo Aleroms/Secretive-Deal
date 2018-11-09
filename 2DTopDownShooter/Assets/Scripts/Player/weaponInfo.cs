@@ -30,4 +30,10 @@ public class weaponInfo : MonoBehaviour {
 
 		//of course if total ammo is 0, then nothing happens
 	}
+
+    public void addAmmo(int ammo){
+
+        currentAmmo += ammo;
+
+    }
 }
