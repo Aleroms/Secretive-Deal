@@ -13,7 +13,7 @@ public class playerAim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        VertRotation = Input.GetAxis("Vertical Aim");
+        VertRotation = Input.GetAxis("Vertical Aim"); //Get value if k, = -1, if i, = 1
         HorizRotation = Input.GetAxis("Horizontal Aim");
         if(VertRotation != 0)
         {
