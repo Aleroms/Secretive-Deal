@@ -23,7 +23,7 @@ public class Pickups : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Untagged"){
+        if(collision.tag == "Bomb"){
 
             pickup.Pickups++;
             Debug.Log("Current Pickups: " + pickup.Pickups);
