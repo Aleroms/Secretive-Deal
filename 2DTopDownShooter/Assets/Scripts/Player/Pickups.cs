@@ -5,6 +5,8 @@ using UnityEngine;
 public class Pickups : MonoBehaviour {
 
     PickupsManager pickup;
+    string CurrentPickup;
+    public GameObject currentObject;
 	// Use this for initialization
 	void Start () {
         pickup = gameObject.GetComponent<PickupsManager>();
@@ -15,8 +17,11 @@ public class Pickups : MonoBehaviour {
 	void Update () {
         if(Input.GetButtonDown("Jump")){
             if(pickup.Pickups > 0){
-                Debug.Log("Used Pickup");
-                pickup.Pickups--;
+                if(CurrentPickup == "Bomb"){
+                    Vector2 spawn = gameObject.transform.position;
+                    currentObject.transform.tag = "Untagged";
+                    Instantiate(currentObject, spawn, Quaternion.identity);
+                }
             }
         }
 	}
@@ -26,6 +31,7 @@ public class Pickups : MonoBehaviour {
         if(collision.tag == "Bomb"){
 
             pickup.Pickups++;
+            CurrentPickup = collision.tag;
             Debug.Log("Current Pickups: " + pickup.Pickups);
         } else if(collision.tag == "Ammo"){
 
