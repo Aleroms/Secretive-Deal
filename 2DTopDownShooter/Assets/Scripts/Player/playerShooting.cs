@@ -57,7 +57,7 @@ public class playerShooting : MonoBehaviour
             Vector2 BulletSpawnPos = firingPoint.transform.position;
             Quaternion BulletSpawnRot = firingPoint.transform.rotation;
             var x = (GameObject)Instantiate(bullet, BulletSpawnPos, BulletSpawnRot);
-            x.GetComponent<Rigidbody2D>().velocity = x.transform.right * 6.0f;
+            x.GetComponent<Rigidbody2D>().velocity = x.transform.right * 12.0f;
             Destroy(x, 2.0f);
             useClip.currentClip--;
         }

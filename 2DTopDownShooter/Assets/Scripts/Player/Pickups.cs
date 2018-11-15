@@ -19,7 +19,6 @@ public class Pickups : MonoBehaviour {
             if(pickup.Pickups > 0){
                 if(CurrentPickup == "Bomb"){
                     Vector2 spawn = gameObject.transform.position;
-                    currentObject.transform.tag = "Untagged";
                     Instantiate(currentObject, spawn, Quaternion.identity);
                 }
             }

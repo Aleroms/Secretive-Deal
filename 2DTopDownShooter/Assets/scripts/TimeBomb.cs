@@ -21,6 +21,7 @@ public class TimeBomb : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(BombActivated());
+        StartCoroutine(BombGrowth());
         Debug.Log("BOOM");
     }
 
@@ -29,5 +30,15 @@ public class TimeBomb : MonoBehaviour {
         yield return new WaitForSeconds(TimeToDetonate);
         Instantiate(explotion, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    IEnumerator BombGrowth(){
+        yield return new WaitForSeconds(.75f);
+        gameObject.transform.localScale += new Vector3(.05f, .05f, 0);
+        yield return new WaitForSeconds(.75f);
+        gameObject.transform.localScale += new Vector3(.05f, .05f, 0);
+        yield return new WaitForSeconds(.75f);
+        gameObject.transform.localScale += new Vector3(.05f, .05f, 0);
+
     }
 }
