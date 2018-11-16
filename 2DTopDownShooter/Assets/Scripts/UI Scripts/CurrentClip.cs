@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CurrentScript : MonoBehaviour {
+public class CurrentClip : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
