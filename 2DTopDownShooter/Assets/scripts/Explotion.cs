@@ -16,10 +16,9 @@ public class Explotion : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-
+            GameObject.FindWithTag("Player").GetComponent<OnEnemyCollide>().doDamage(50);
         }
     }
 }

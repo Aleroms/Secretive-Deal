@@ -19,11 +19,21 @@ public class OnEnemyCollide : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
-        {
-            currentHealth -= 25;
-            Debug.Log("Hit by enemy");
-            collision.gameObject.GetComponent<enemyBehavior>().reduceHealth(1);
+        if(collision.CompareTag("Enemy")){
+            doDamage(25);
         }
+    }
+
+    public void doDamage(int damage){
+
+        if(currentHealth - damage < 0){
+
+            currentHealth = 0;
+
+        } else {
+
+            currentHealth -= damage;
+        }
+
     }
 }
