@@ -49,4 +49,8 @@ public class Pickups : MonoBehaviour {
 
         }
     }
+
+    public int getPickup(){
+        return pickup.Pickups;
+    }
 }

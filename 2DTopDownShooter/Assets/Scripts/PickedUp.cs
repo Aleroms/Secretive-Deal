@@ -19,7 +19,10 @@ public class PickedUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("I've been picked up!");
-        Destroy(gameObject);
+        if (collision.tag == "Player")
+        {
+            Debug.Log("I've been picked up!");
+            Destroy(gameObject);
+        }
     }
 }
