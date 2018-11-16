@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pickups : MonoBehaviour {
 
     PickupsManager pickup;
     string CurrentPickup;
     public GameObject currentObject;
+    public Image pickupSprite;
+    public Sprite bombSprite;
+    public Text pickupCount;
 	// Use this for initialization
 	void Start () {
         pickup = gameObject.GetComponent<PickupsManager>();
@@ -20,9 +24,14 @@ public class Pickups : MonoBehaviour {
                 if(CurrentPickup == "Bomb"){
                     Vector2 spawn = gameObject.transform.position;
                     Instantiate(currentObject, spawn, Quaternion.identity);
+                    pickup.Pickups--;
+                    if(pickup.Pickups == 0){
+                        pickupSprite.sprite = null;
+                    }
                 }
             }
         }
+        pickupCount.text = "x" + pickup.Pickups;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +41,7 @@ public class Pickups : MonoBehaviour {
             pickup.Pickups++;
             CurrentPickup = collision.tag;
             Debug.Log("Current Pickups: " + pickup.Pickups);
+            pickupSprite.sprite = bombSprite;
         } else if(collision.tag == "Ammo"){
 
             gameObject.transform.Find("NinjaSprite").transform.Find("ShootingOrigin").GetComponent<weaponInfo>().addAmmo(10);
