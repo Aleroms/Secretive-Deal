@@ -12,6 +12,6 @@ public class HealthInfo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        gameObject.GetComponent<Text>().text = "Health: " + GameObject.FindWithTag("Player").GetComponent<OnEnemyCollide>().currentHealth;
+        gameObject.GetComponent<Image>().transform.localScale = new Vector3((float)GameObject.FindWithTag("Player").GetComponent<OnEnemyCollide>().currentHealth * .01f, 1, 1);
 	}
 }
